@@ -34,9 +34,3 @@ pkg add -f https://github.com/grisey/opnsense-igmpv3proxy/releases/download/v0.1
 service configd restart
 configctl webgui restart
 ```
-
-After installation, open:
-
-```text
-Services -> IGMPv3 Proxy
-```
