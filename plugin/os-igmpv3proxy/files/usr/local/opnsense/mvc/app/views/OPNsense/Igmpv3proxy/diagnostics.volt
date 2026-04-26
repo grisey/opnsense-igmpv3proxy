@@ -35,16 +35,16 @@ $(document).ready(function() {
             <br/><br/>
 
             <h2>{{ lang._('Generated configuration') }}</h2>
-            <pre id="igmpv3proxy_config" style="white-space: pre-wrap;"></pre>
+            <pre id="igmpv3proxy_config" style="white-space: pre; overflow-x: auto; font-family: monospace;"></pre>
 
             <h2>{{ lang._('Routes') }}</h2>
-            <pre id="igmpv3proxy_routes" style="white-space: pre-wrap;"></pre>
+            <pre id="igmpv3proxy_routes" style="white-space: pre; overflow-x: auto; font-family: monospace;"></pre>
 
             <h2>{{ lang._('Interfaces') }}</h2>
-            <pre id="igmpv3proxy_interfaces" style="white-space: pre-wrap;"></pre>
+            <pre id="igmpv3proxy_interfaces" style="white-space: pre; overflow-x: auto; font-family: monospace;"></pre>
 
             <h2>{{ lang._('Filters') }}</h2>
-            <pre id="igmpv3proxy_filters" style="white-space: pre-wrap;"></pre>
+            <pre id="igmpv3proxy_filters" style="white-space: pre; overflow-x: auto; font-family: monospace;"></pre>
         </div>
     </div>
 </section>
