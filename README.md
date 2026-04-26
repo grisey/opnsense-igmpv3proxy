@@ -1,6 +1,6 @@
 # opnsense-igmpv3proxy
 
-OPNsense plugin package for managing igmpv3proxy with an MVC GUI.
+OPNsense plugin package for managing igmpv3proxy.
 
 ## Features
 
@@ -23,8 +23,16 @@ OPNsense plugin package for managing igmpv3proxy with an MVC GUI.
 
 ## Package
 
-The release package includes the igmpv3proxy binary and does not require local compilation.
+The release package includes the `igmpv3proxy` binary and does not require local compilation.
 
 ## Install
 
-See `INSTALL.md`.
+Download and install the package from GitHub Releases:
+
+pkg add -f https://github.com/grisey/opnsense-igmpv3proxy/releases/download/v0.1/os-igmpv3proxy-0.1.pkg
+service configd restart
+configctl webgui restart
+
+After installation, open:
+
+Services -> IGMPv3 Proxy
