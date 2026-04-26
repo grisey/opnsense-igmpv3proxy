@@ -1,0 +1,24 @@
+#!/bin/sh
+
+/usr/local/bin/python3 - <<'PY'
+import subprocess
+import sys
+import xml.etree.ElementTree as ET
+
+try:
+    root = ET.parse("/conf/config.xml").getroot()
+    model = root.find("./OPNsense/Igmpv3proxy")
+except Exception:
+    sys.exit(0)
+
+enabled = model is not None and (model.findtext("enabled", "0") or "").strip() == "1"
+
+if enabled:
+    subprocess.run(
+        ["/usr/local/sbin/configctl", "igmpv3proxy", "start"],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+PY
+
+exit 0

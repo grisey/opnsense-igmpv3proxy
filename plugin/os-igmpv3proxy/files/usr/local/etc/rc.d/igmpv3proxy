@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# PROVIDE: igmpv3proxy
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="igmpv3proxy"
+rcvar="igmpv3proxy_enable"
+
+command="/usr/sbin/daemon"
+pidfile="/var/run/${name}.pid"
+
+igmpv3proxy_bin="/usr/local/sbin/igmpv3proxy"
+igmpv3proxy_config="/usr/local/etc/igmpv3proxy.conf"
+igmpv3proxy_child_pidfile="/var/run/${name}_child.pid"
+
+command_args="-f -P ${pidfile} -p ${igmpv3proxy_child_pidfile} ${igmpv3proxy_bin} -d ${igmpv3proxy_config}"
+
+load_rc_config ${name}
+
+: ${igmpv3proxy_enable:="NO"}
+
+run_rc_command "$1"

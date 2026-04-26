@@ -1,0 +1,8 @@
+<menu>
+    <Services>
+        <Igmpv3proxy VisibleName="IGMPv3 Proxy" cssClass="fa fa-map-signs fa-fw">
+            <Settings order="10" VisibleName="Settings" url="/ui/igmpv3proxy/settings"/>
+            <Diagnostics order="20" VisibleName="Diagnostics" url="/ui/igmpv3proxy/diagnostics"/>
+        </Igmpv3proxy>
+    </Services>
+</menu>

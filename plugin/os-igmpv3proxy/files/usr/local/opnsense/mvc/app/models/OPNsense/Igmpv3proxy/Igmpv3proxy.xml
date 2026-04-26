@@ -1,0 +1,87 @@
+<model>
+    <mount>//OPNsense/Igmpv3proxy</mount>
+    <version>1.2.0</version>
+    <description>igmpv3proxy settings</description>
+    <items>
+        <enabled type="BooleanField">
+            <Default>0</Default>
+            <Required>Y</Required>
+        </enabled>
+        <quickleave type="BooleanField">
+            <Default>1</Default>
+            <Required>Y</Required>
+        </quickleave>
+        <use_aliases type="BooleanField">
+            <Default>0</Default>
+            <Required>Y</Required>
+        </use_aliases>
+        <upstream type="InterfaceField">
+            <Default>wan</Default>
+            <Required>Y</Required>
+            <Multiple>N</Multiple>
+        </upstream>
+        <downstreams type="InterfaceField">
+            <Default>opt6</Default>
+            <Required>Y</Required>
+            <Multiple>Y</Multiple>
+        </downstreams>
+
+        <upstream_whitelist_alias_enabled type="BooleanField">
+            <Default>0</Default>
+            <Required>Y</Required>
+        </upstream_whitelist_alias_enabled>
+        <upstream_whitelist_alias type="TextField">
+            <Default>Multicast_Nets</Default>
+            <Required>N</Required>
+        </upstream_whitelist_alias>
+        <upstream_whitelist type="NetworkField">
+            <Default>232.0.0.0/8</Default>
+            <NetMaskRequired>Y</NetMaskRequired>
+            <AddressFamily>ipv4</AddressFamily>
+            <FieldSeparator>,</FieldSeparator>
+            <WildcardEnabled>N</WildcardEnabled>
+            <AsList>Y</AsList>
+            <Required>Y</Required>
+        </upstream_whitelist>
+
+        <downstream_whitelist_alias_enabled type="BooleanField">
+            <Default>0</Default>
+            <Required>Y</Required>
+        </downstream_whitelist_alias_enabled>
+        <downstream_whitelist_alias type="TextField">
+            <Default>Multicast_Nets</Default>
+            <Required>N</Required>
+        </downstream_whitelist_alias>
+        <downstream_whitelist type="NetworkField">
+            <Default>232.0.0.0/8</Default>
+            <NetMaskRequired>Y</NetMaskRequired>
+            <AddressFamily>ipv4</AddressFamily>
+            <FieldSeparator>,</FieldSeparator>
+            <WildcardEnabled>N</WildcardEnabled>
+            <AsList>Y</AsList>
+            <Required>Y</Required>
+        </downstream_whitelist>
+
+        <source_filter_enabled type="BooleanField">
+            <Default>0</Default>
+            <Required>Y</Required>
+        </source_filter_enabled>
+        <source_filter_alias_enabled type="BooleanField">
+            <Default>0</Default>
+            <Required>Y</Required>
+        </source_filter_alias_enabled>
+        <source_filter_source_alias type="TextField">
+            <Default>MagentaTV_Multicast</Default>
+            <Required>N</Required>
+        </source_filter_source_alias>
+        <source_filter_sources type="NetworkField">
+            <Default>87.141.0.0/16</Default>
+            <NetMaskRequired>Y</NetMaskRequired>
+            <AddressFamily>ipv4</AddressFamily>
+            <FieldSeparator>,</FieldSeparator>
+            <WildcardEnabled>N</WildcardEnabled>
+            <AsList>Y</AsList>
+            <Required>N</Required>
+        </source_filter_sources>
+    </items>
+</model>

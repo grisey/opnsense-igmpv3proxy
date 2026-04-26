@@ -1,0 +1,13 @@
+<acl>
+   <page-services-igmpv3proxy>
+      <name>Services: IGMPv3 Proxy</name>
+      <patterns>
+         <pattern>ui/igmpv3proxy</pattern>
+         <pattern>ui/igmpv3proxy/*</pattern>
+         <pattern>api/igmpv3proxy/settings/*</pattern>
+         <pattern>api/igmpv3proxy/service/*</pattern>
+         <pattern>api/igmpv3proxy/diagnostics/*</pattern>
+         <pattern>api/igmpv3proxy/aliases/*</pattern>
+      </patterns>
+   </page-services-igmpv3proxy>
+</acl>

@@ -1,0 +1,121 @@
+<form>
+    <field>
+        <type>header</type>
+        <label>General Settings</label>
+    </field>
+    <field>
+        <id>igmpv3proxy.enabled</id>
+        <label>Enable</label>
+        <type>checkbox</type>
+        <help>Enable igmpv3proxy service.</help>
+    </field>
+    <field>
+        <id>igmpv3proxy.quickleave</id>
+        <label>Quickleave</label>
+        <type>checkbox</type>
+        <help>Enable quickleave mode.</help>
+    </field>
+    <field>
+        <id>igmpv3proxy.use_aliases</id>
+        <label>Use aliases</label>
+        <type>checkbox</type>
+        <help>Use firewall aliases instead of manually entered networks for source filters and whitelist groups.</help>
+    </field>
+    <field>
+        <id>igmpv3proxy.upstream</id>
+        <label>Upstream Interface</label>
+        <type>dropdown</type>
+        <help>Interface towards the multicast provider.</help>
+    </field>
+    <field>
+        <id>igmpv3proxy.downstreams</id>
+        <label>Downstream Interfaces</label>
+        <type>select_multiple</type>
+        <style>selectpicker</style>
+        <help>Interfaces towards multicast clients.</help>
+    </field>
+
+    <field>
+        <type>header</type>
+        <label>Upstream Whitelist</label>
+    </field>
+    <field>
+        <id>igmpv3proxy.upstream_whitelist_alias_enabled</id>
+        <label>Use upstream whitelist alias</label>
+        <type>checkbox</type>
+        <style>hidden</style>
+        <help>Use a firewall alias instead of manual multicast networks.</help>
+    </field>
+    <field>
+        <id>igmpv3proxy.upstream_whitelist_alias</id>
+        <label>Upstream whitelist alias</label>
+        <type>text</type>
+        <help>Name of a firewall alias containing IPv4 multicast networks.</help>
+    </field>
+    <field>
+        <id>igmpv3proxy.upstream_whitelist</id>
+        <label>Upstream Whitelist Groups</label>
+        <type>select_multiple</type>
+        <style>tokenize</style>
+        <allownew>true</allownew>
+        <help>Allowed IPv4 multicast groups on the upstream interface, for example 232.0.0.0/8.</help>
+    </field>
+
+    <field>
+        <type>header</type>
+        <label>Downstream Whitelist</label>
+    </field>
+    <field>
+        <id>igmpv3proxy.downstream_whitelist_alias_enabled</id>
+        <label>Use downstream whitelist alias</label>
+        <type>checkbox</type>
+        <style>hidden</style>
+        <help>Use a firewall alias instead of manual multicast networks.</help>
+    </field>
+    <field>
+        <id>igmpv3proxy.downstream_whitelist_alias</id>
+        <label>Downstream whitelist alias</label>
+        <type>text</type>
+        <help>Name of a firewall alias containing IPv4 multicast networks.</help>
+    </field>
+    <field>
+        <id>igmpv3proxy.downstream_whitelist</id>
+        <label>Downstream Whitelist Groups</label>
+        <type>select_multiple</type>
+        <style>tokenize</style>
+        <allownew>true</allownew>
+        <help>Allowed IPv4 multicast groups on downstream interfaces, for example 232.0.0.0/8.</help>
+    </field>
+
+    <field>
+        <type>header</type>
+        <label>Source Filter</label>
+    </field>
+    <field>
+        <id>igmpv3proxy.source_filter_enabled</id>
+        <label>Enable source filter</label>
+        <type>checkbox</type>
+        <help>Generate upstream source filter rules. Destination groups are taken from the resolved upstream whitelist.</help>
+    </field>
+    <field>
+        <id>igmpv3proxy.source_filter_alias_enabled</id>
+        <label>Use source alias</label>
+        <type>checkbox</type>
+        <style>hidden</style>
+        <help>Use a firewall alias instead of manual source networks.</help>
+    </field>
+    <field>
+        <id>igmpv3proxy.source_filter_source_alias</id>
+        <label>Source alias</label>
+        <type>text</type>
+        <help>Name of a firewall alias containing allowed IPv4 source hosts or networks. The alias content must not be multicast.</help>
+    </field>
+    <field>
+        <id>igmpv3proxy.source_filter_sources</id>
+        <label>Source networks</label>
+        <type>select_multiple</type>
+        <style>tokenize</style>
+        <allownew>true</allownew>
+        <help>Allowed IPv4 source networks. These must not be multicast networks.</help>
+    </field>
+</form>
