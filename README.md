@@ -29,10 +29,14 @@ The release package includes the `igmpv3proxy` binary and does not require local
 
 Download and install the package from GitHub Releases:
 
+```sh
 pkg add -f https://github.com/grisey/opnsense-igmpv3proxy/releases/download/v0.1/os-igmpv3proxy-0.1.pkg
 service configd restart
 configctl webgui restart
+```
 
 After installation, open:
 
+```text
 Services -> IGMPv3 Proxy
+```
